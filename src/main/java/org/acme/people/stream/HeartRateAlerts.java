@@ -11,7 +11,7 @@ import io.smallrye.reactive.messaging.kafka.Record;
 public class HeartRateAlerts {
 
 	
-	 @Incoming("heartrate")               
+	 @Incoming("heartratealert")               
 	    @Outgoing("heart-rate-stream")      
 	    @Broadcast                       
 	    public String process(Record<String, Integer> alert) {

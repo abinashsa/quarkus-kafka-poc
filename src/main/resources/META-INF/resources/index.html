@@ -112,26 +112,7 @@ function update() {
 }
         
 
-var source = new EventSource("/heartrate/stream");
-    source.onmessage = function (event) {
-        console.log("received new data: " + event.data);
-       
-        var newTags = [];
-        tags.forEach(function(tag) {
-            newTags.push({"key": tag.key, "value": tag.value});
-        });
 
-       
-
-        newTags = newTags.sort(function(a, b) {
-            return b.value - a.value;
-        });
-
-        tags = newTags;
-        console.log("new heart rate: " + JSON.stringify(tags));
-        console.log("-------");
-        update();
-    };
    
     
 
